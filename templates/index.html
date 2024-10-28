@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>감정 분석기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #333;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>감정 분석기</h1>
+    <form method="POST">
+        <input type="text" name="user_input" placeholder="당신의 감정을 입력하세요" required>
+        <button type="submit">분석하기</button>
+    </form>
+    {% if emotion %}
+    <div class="result">
+        <h2>감정: {{ emotion }}</h2>
+        <p>설명: {{ description }}</p>
+        <p>조언: {{ solution }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
